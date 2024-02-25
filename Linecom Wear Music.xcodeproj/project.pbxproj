@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		032A099A2B8B699200FEEB29 /* Linecom Wear Music Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 032A09992B8B699200FEEB29 /* Linecom Wear Music Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		032A099F2B8B699200FEEB29 /* Linecom_Wear_MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A099E2B8B699200FEEB29 /* Linecom_Wear_MusicApp.swift */; };
+		032A09A12B8B699200FEEB29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A09A02B8B699200FEEB29 /* ContentView.swift */; };
+		032A09A32B8B699300FEEB29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032A09A22B8B699300FEEB29 /* Assets.xcassets */; };
+		032A09A62B8B699300FEEB29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032A09A52B8B699300FEEB29 /* Preview Assets.xcassets */; };
+		032A09B02B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A09AF2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppTests.swift */; };
+		032A09BA2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A09B92B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift */; };
+		032A09BC2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A09BB2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		032A099B2B8B699200FEEB29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 032A098D2B8B699200FEEB29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 032A09982B8B699200FEEB29;
+			remoteInfo = "Linecom Wear Music Watch App";
+		};
+		032A09AC2B8B699300FEEB29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 032A098D2B8B699200FEEB29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 032A09982B8B699200FEEB29;
+			remoteInfo = "Linecom Wear Music Watch App";
+		};
+		032A09B62B8B699300FEEB29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 032A098D2B8B699200FEEB29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 032A09982B8B699200FEEB29;
+			remoteInfo = "Linecom Wear Music Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		032A09C22B8B699300FEEB29 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				032A099A2B8B699200FEEB29 /* Linecom Wear Music Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		032A09932B8B699200FEEB29 /* Linecom Wear Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Linecom Wear Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		032A09992B8B699200FEEB29 /* Linecom Wear Music Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Linecom Wear Music Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		032A099E2B8B699200FEEB29 /* Linecom_Wear_MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linecom_Wear_MusicApp.swift; sourceTree = "<group>"; };
+		032A09A02B8B699200FEEB29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		032A09A22B8B699300FEEB29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		032A09A52B8B699300FEEB29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		032A09AB2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Linecom Wear Music Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		032A09AF2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linecom_Wear_Music_Watch_AppTests.swift; sourceTree = "<group>"; };
+		032A09B52B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Linecom Wear Music Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		032A09B92B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linecom_Wear_Music_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		032A09BB2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		032A09962B8B699200FEEB29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09A82B8B699300FEEB29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09B22B8B699300FEEB29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032A098C2B8B699200FEEB29 = {
+			isa = PBXGroup;
+			children = (
+				032A099D2B8B699200FEEB29 /* Linecom Wear Music Watch App */,
+				032A09AE2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests */,
+				032A09B82B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests */,
+				032A09942B8B699200FEEB29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		032A09942B8B699200FEEB29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				032A09932B8B699200FEEB29 /* Linecom Wear Music.app */,
+				032A09992B8B699200FEEB29 /* Linecom Wear Music Watch App.app */,
+				032A09AB2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests.xctest */,
+				032A09B52B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		032A099D2B8B699200FEEB29 /* Linecom Wear Music Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				032A099E2B8B699200FEEB29 /* Linecom_Wear_MusicApp.swift */,
+				032A09A02B8B699200FEEB29 /* ContentView.swift */,
+				032A09A22B8B699300FEEB29 /* Assets.xcassets */,
+				032A09A42B8B699300FEEB29 /* Preview Content */,
+			);
+			path = "Linecom Wear Music Watch App";
+			sourceTree = "<group>";
+		};
+		032A09A42B8B699300FEEB29 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				032A09A52B8B699300FEEB29 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		032A09AE2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				032A09AF2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppTests.swift */,
+			);
+			path = "Linecom Wear Music Watch AppTests";
+			sourceTree = "<group>";
+		};
+		032A09B82B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				032A09B92B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift */,
+				032A09BB2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Linecom Wear Music Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		032A09922B8B699200FEEB29 /* Linecom Wear Music */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032A09C32B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music" */;
+			buildPhases = (
+				032A09912B8B699200FEEB29 /* Resources */,
+				032A09C22B8B699300FEEB29 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				032A099C2B8B699200FEEB29 /* PBXTargetDependency */,
+			);
+			name = "Linecom Wear Music";
+			productName = "Linecom Wear Music";
+			productReference = 032A09932B8B699200FEEB29 /* Linecom Wear Music.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		032A09982B8B699200FEEB29 /* Linecom Wear Music Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032A09BF2B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music Watch App" */;
+			buildPhases = (
+				032A09952B8B699200FEEB29 /* Sources */,
+				032A09962B8B699200FEEB29 /* Frameworks */,
+				032A09972B8B699200FEEB29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Linecom Wear Music Watch App";
+			productName = "Linecom Wear Music Watch App";
+			productReference = 032A09992B8B699200FEEB29 /* Linecom Wear Music Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		032A09AA2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032A09C62B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music Watch AppTests" */;
+			buildPhases = (
+				032A09A72B8B699300FEEB29 /* Sources */,
+				032A09A82B8B699300FEEB29 /* Frameworks */,
+				032A09A92B8B699300FEEB29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				032A09AD2B8B699300FEEB29 /* PBXTargetDependency */,
+			);
+			name = "Linecom Wear Music Watch AppTests";
+			productName = "Linecom Wear Music Watch AppTests";
+			productReference = 032A09AB2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		032A09B42B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 032A09C92B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music Watch AppUITests" */;
+			buildPhases = (
+				032A09B12B8B699300FEEB29 /* Sources */,
+				032A09B22B8B699300FEEB29 /* Frameworks */,
+				032A09B32B8B699300FEEB29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				032A09B72B8B699300FEEB29 /* PBXTargetDependency */,
+			);
+			name = "Linecom Wear Music Watch AppUITests";
+			productName = "Linecom Wear Music Watch AppUITests";
+			productReference = 032A09B52B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		032A098D2B8B699200FEEB29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					032A09922B8B699200FEEB29 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					032A09982B8B699200FEEB29 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					032A09AA2B8B699300FEEB29 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 032A09982B8B699200FEEB29;
+					};
+					032A09B42B8B699300FEEB29 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 032A09982B8B699200FEEB29;
+					};
+				};
+			};
+			buildConfigurationList = 032A09902B8B699200FEEB29 /* Build configuration list for PBXProject "Linecom Wear Music" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 032A098C2B8B699200FEEB29;
+			productRefGroup = 032A09942B8B699200FEEB29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				032A09922B8B699200FEEB29 /* Linecom Wear Music */,
+				032A09982B8B699200FEEB29 /* Linecom Wear Music Watch App */,
+				032A09AA2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests */,
+				032A09B42B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		032A09912B8B699200FEEB29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09972B8B699200FEEB29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032A09A62B8B699300FEEB29 /* Preview Assets.xcassets in Resources */,
+				032A09A32B8B699300FEEB29 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09A92B8B699300FEEB29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09B32B8B699300FEEB29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		032A09952B8B699200FEEB29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032A09A12B8B699200FEEB29 /* ContentView.swift in Sources */,
+				032A099F2B8B699200FEEB29 /* Linecom_Wear_MusicApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09A72B8B699300FEEB29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032A09B02B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		032A09B12B8B699300FEEB29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032A09BA2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift in Sources */,
+				032A09BC2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		032A099C2B8B699200FEEB29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 032A09982B8B699200FEEB29 /* Linecom Wear Music Watch App */;
+			targetProxy = 032A099B2B8B699200FEEB29 /* PBXContainerItemProxy */;
+		};
+		032A09AD2B8B699300FEEB29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 032A09982B8B699200FEEB29 /* Linecom Wear Music Watch App */;
+			targetProxy = 032A09AC2B8B699300FEEB29 /* PBXContainerItemProxy */;
+		};
+		032A09B72B8B699300FEEB29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 032A09982B8B699200FEEB29 /* Linecom Wear Music Watch App */;
+			targetProxy = 032A09B62B8B699300FEEB29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		032A09BD2B8B699300FEEB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		032A09BE2B8B699300FEEB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		032A09C02B8B699300FEEB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Linecom Wear Music Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Linecom Wear Music";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		032A09C12B8B699300FEEB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Linecom Wear Music Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Linecom Wear Music";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		032A09C42B8B699300FEEB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				INFOPLIST_KEY_CFBundleDisplayName = "Linecom Wear Music";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		032A09C52B8B699300FEEB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				INFOPLIST_KEY_CFBundleDisplayName = "Linecom Wear Music";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		032A09C72B8B699300FEEB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Linecom Wear Music Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Linecom Wear Music Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		032A09C82B8B699300FEEB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Linecom Wear Music Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Linecom Wear Music Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		032A09CA2B8B699300FEEB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Linecom Wear Music Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		032A09CB2B8B699300FEEB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B38QUJMY47;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-cn.linecom.Linecom-Wear-Music-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Linecom Wear Music Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		032A09902B8B699200FEEB29 /* Build configuration list for PBXProject "Linecom Wear Music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032A09BD2B8B699300FEEB29 /* Debug */,
+				032A09BE2B8B699300FEEB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		032A09BF2B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032A09C02B8B699300FEEB29 /* Debug */,
+				032A09C12B8B699300FEEB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		032A09C32B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032A09C42B8B699300FEEB29 /* Debug */,
+				032A09C52B8B699300FEEB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		032A09C62B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032A09C72B8B699300FEEB29 /* Debug */,
+				032A09C82B8B699300FEEB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		032A09C92B8B699300FEEB29 /* Build configuration list for PBXNativeTarget "Linecom Wear Music Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032A09CA2B8B699300FEEB29 /* Debug */,
+				032A09CB2B8B699300FEEB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 032A098D2B8B699200FEEB29 /* Project object */;
+}
