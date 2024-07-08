@@ -83,9 +83,9 @@
 		032A098C2B8B699200FEEB29 = {
 			isa = PBXGroup;
 			children = (
-				032A099D2B8B699200FEEB29 /* Linecom Wear Music Watch App */,
-				032A09AE2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests */,
-				032A09B82B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests */,
+				032A099D2B8B699200FEEB29 /* Linecom Wear FM Watch App */,
+				032A09AE2B8B699300FEEB29 /* Linecom Wear FM Watch AppTests */,
+				032A09B82B8B699300FEEB29 /* Linecom Wear FM Watch AppUITests */,
 				032A09942B8B699200FEEB29 /* Products */,
 				03A9423B2C3C68A0008C7966 /* Frameworks */,
 			);
@@ -100,7 +100,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		032A099D2B8B699200FEEB29 /* Linecom Wear Music Watch App */ = {
+		032A099D2B8B699200FEEB29 /* Linecom Wear FM Watch App */ = {
 			isa = PBXGroup;
 			children = (
 				032A09D42B8B74BA00FEEB29 /* Linecom-Wear-Music-Watch-App-Info.plist */,
@@ -117,7 +117,7 @@
 				032A09A22B8B699300FEEB29 /* Assets.xcassets */,
 				032A09A42B8B699300FEEB29 /* Preview Content */,
 			);
-			path = "Linecom Wear Music Watch App";
+			path = "Linecom Wear FM Watch App";
 			sourceTree = "<group>";
 		};
 		032A09A42B8B699300FEEB29 /* Preview Content */ = {
@@ -128,21 +128,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		032A09AE2B8B699300FEEB29 /* Linecom Wear Music Watch AppTests */ = {
+		032A09AE2B8B699300FEEB29 /* Linecom Wear FM Watch AppTests */ = {
 			isa = PBXGroup;
 			children = (
 				032A09AF2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppTests.swift */,
 			);
-			path = "Linecom Wear Music Watch AppTests";
+			path = "Linecom Wear FM Watch AppTests";
 			sourceTree = "<group>";
 		};
-		032A09B82B8B699300FEEB29 /* Linecom Wear Music Watch AppUITests */ = {
+		032A09B82B8B699300FEEB29 /* Linecom Wear FM Watch AppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				032A09B92B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift */,
 				032A09BB2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift */,
 			);
-			path = "Linecom Wear Music Watch AppUITests";
+			path = "Linecom Wear FM Watch AppUITests";
 			sourceTree = "<group>";
 		};
 		03A9423B2C3C68A0008C7966 /* Frameworks */ = {
