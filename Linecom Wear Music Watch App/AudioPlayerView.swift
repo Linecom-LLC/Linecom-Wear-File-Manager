@@ -26,40 +26,44 @@ struct AudioPlayerView: View {
         VStack {
             if let player = player {
                 VStack {
-                    if let artwork = getArtwork() {
-                        Image(uiImage: artwork)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
-                            .padding()
-                    } else {
-                        Rectangle()
-                            .fill(Color.gray)
-                            .frame(width: 100, height: 100)
-                            .padding()
+                    ZStack {
+                        if let artwork = getArtwork() {
+                            Image(uiImage: artwork)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100)
+                                .padding()
+                        } else {
+                            Rectangle()
+                                .fill(Color.gray)
+                                .frame(width: 100, height: 100)
+                                .padding()
+                        }
+                        VolumeControlView().scaleEffect(0.5).position(x: 170, y: 50)
                     }
 
                     //Text("Audio Preview")
                     //    .font(.title)
                     //    .padding(
                     Text("\(songTitle)")
-                    Text("\(songArtist)")
+                    Text("\(songArtist) - \(albumName)")
                         .font(.custom("112",size: 11))
                     Text("\(formattedTime(currentTime)) / \(formattedTime(duration))")
                         .font(.custom("11",size: 10))
 
                     HStack {
+                        Spacer()
                         Button(action: {
                             seek(by: -5)
                         }) {
                             Image(systemName: "gobackward.5")
                         }
-                        .frame(width: 30, height: 30)
+                        .frame(width: 40, height: 40)
                         //.background(Color.gray.opacity(0.2))
                         .clipShape(Circle())
                         
                         
-                        
+                        Spacer()
                         Button(action: {
                             if isPlaying {
                                 player.pause()
@@ -70,16 +74,17 @@ struct AudioPlayerView: View {
                         }) {
                             Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                         }
-                        .frame(width: 30, height: 30)
+                        .frame(width: 40, height: 40)
                         .clipShape(Circle())
-                        
+                        Spacer()
                         Button(action: {
                             seek(by: 5)
                         }) {
                             Image(systemName: "goforward.5")
                         }
-                        .frame(width: 30, height: 30)
+                        .frame(width: 40, height: 40)
                         .clipShape(Circle())
+                        Spacer()
                     }
                     .padding()
                 }
@@ -150,4 +155,24 @@ struct AudioPlayerView: View {
                 }
             }
         }
+}
+public struct VolumeControlView: WKInterfaceObjectRepresentable {
+    public init() {
+        
+    }
+    
+    public typealias WKInterfaceObjectType = WKInterfaceVolumeControl
+    
+    public func makeWKInterfaceObject(context: WKInterfaceObjectRepresentableContext<VolumeControlView>) -> WKInterfaceVolumeControl {
+        // Return the interface object that the view displays.
+        return WKInterfaceVolumeControl(origin: .local)
+    }
+    
+    public func updateWKInterfaceObject(_ map: WKInterfaceVolumeControl, context: WKInterfaceObjectRepresentableContext<VolumeControlView>) {
+        
+    }
+}
+
+#Preview{
+    VolumeControlView()
 }

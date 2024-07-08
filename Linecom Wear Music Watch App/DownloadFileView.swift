@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DownloadFileView: View {
     @EnvironmentObject var viewModel: FileManagerViewModel
-    @State private var fileURL: String = "https://darock.storage.linecom.net.cn/darockbrowser/example/Shiroko.mp4"
+    @State private var fileURL: String = "https://nanjing-media.storage.linecom.net.cn/pictures/1/2024/07/09/KQH5cipj_santiquanji_liucixin.txt"
     @State private var showAlert = false
     @State private var alertMessage = ""
 
@@ -41,11 +41,9 @@ struct DownloadFileView: View {
                     Text("\(Int(viewModel.downloadProgress * 100))%")
                     Text("\(viewModel.downloadedBytes / 1_048_576) MB / \(viewModel.totalBytes / 1_048_576) MB")
                 }
-                .padding()
                 //}
                 Spacer()
             }
-            .padding()
             .navigationTitle("下载文件")
         }
     }

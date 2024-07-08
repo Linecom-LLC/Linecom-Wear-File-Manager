@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ImageView: View {
     var imageURL: URL
+    @State private var scale: CGFloat = 1.0
+    @State private var offset: CGSize = .zero
+    @GestureState private var dragOffset: CGSize = .zero
+    @FocusState private var isImageZoomFocused: Bool
 
     var body: some View {
         VStack {
@@ -17,12 +21,27 @@ struct ImageView: View {
                 Image(uiImage: uiImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .navigationTitle("图像预览")
-                    .navigationBarTitleDisplayMode(.inline)
+                    .scaleEffect(scale)
+                    .offset(x: offset.width + dragOffset.width, y: offset.height + dragOffset.height)
+                    .gesture(
+                        DragGesture()
+                            .updating($dragOffset) { value, state, _ in
+                                state = value.translation
+                            }
+                            .onEnded { value in
+                                offset.width += value.translation.width
+                                offset.height += value.translation.height
+                            }
+                    )
+                    .focusable(true)
+                    .digitalCrownRotation($scale, from: 1.0, through: 5.0, by: 0.1, sensitivity: .medium, isHapticFeedbackEnabled: true)
+                    .padding()
             } else {
-                Text("无法加载图像")
+                Text("Unable to load image")
             }
         }
+        .navigationTitle("图像预览")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

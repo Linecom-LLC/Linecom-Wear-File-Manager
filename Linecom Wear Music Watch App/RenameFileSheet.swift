@@ -17,15 +17,14 @@ struct RenameFileSheet: View {
             Text("Rename File")
                 .font(.headline)
             TextField("New file name", text: $newFileName)
-                .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
             HStack {
-                Button("Cancel") {
+                Button("取消") {
                     isPresented = false
                 }
                 Spacer()
-                Button("Rename") {
+                Button("重命名") {
                     isPresented = false
                     onRename()
                 }

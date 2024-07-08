@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var isDeleteAlertPresented = false
     @State private var isFilePreviewSheetPresented = false
     @State private var isDownloadFileSheetPresented = false
+    @State private var isAboutSheetPresented = false
     @State private var newFileName = ""
     @State private var selectedFileIndex: Int?
     @State private var fileToDeleteIndex: Int?
@@ -22,11 +23,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: DownloadFileView().environmentObject(viewModel)) {
-                    Text("下载文件")
-                        .foregroundColor(.blue)
-                        .cornerRadius(10)
-                }
                 List {
                     ForEach(Array(viewModel.files.enumerated()), id: \.offset) { index, file in
                         HStack {
@@ -92,6 +88,9 @@ struct ContentView: View {
                                     DownloadFileView()
                                         .environmentObject(viewModel)
                                 }
+                .sheet(isPresented: $isAboutSheetPresented) {
+                    AboutView()
+                }
                 .alert(isPresented: $isDeleteAlertPresented) {
                     Alert(
                         title: Text("删除确认"),
@@ -107,11 +106,18 @@ struct ContentView: View {
             }
             .navigationTitle("LWFM文件管理")
             .toolbar {
-                            ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .topBarLeading) {
                                 Button(action: {
                                     isDownloadFileSheetPresented = true
                                 }) {
                                     Image(systemName: "square.and.arrow.down")
+                                }
+                            }
+                ToolbarItem(placement: .topBarTrailing) {
+                                Button(action: {
+                                    isAboutSheetPresented = true
+                                }) {
+                                    Image(systemName: "info.circle")
                                 }
                             }
                         }
