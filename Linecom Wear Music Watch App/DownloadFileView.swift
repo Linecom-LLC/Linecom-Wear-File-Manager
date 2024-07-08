@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DownloadFileView: View {
     @EnvironmentObject var viewModel: FileManagerViewModel
-    @State private var fileURL: String = "https://nanjing-media.storage.linecom.net.cn/pictures/1/2024/07/09/KQH5cipj_santiquanji_liucixin.txt"
+    @State private var fileURL: String = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
 
