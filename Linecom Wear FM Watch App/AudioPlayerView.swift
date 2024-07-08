@@ -92,6 +92,9 @@ struct AudioPlayerView: View {
                     setupRemoteTransportControls()
                     setupNowPlaying()
                 }
+                .onDisappear(){
+                    player.pause()
+                }
             } else {
                 Text("Unable to load audio")
                     .onAppear {
