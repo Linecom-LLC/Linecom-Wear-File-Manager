@@ -8,11 +8,12 @@
 import SwiftUI
 import AVKit
 import AVFoundation
+import MediaPlayer
 
 struct AudioPlayerView: View {
     var audioURL: URL
     @Environment(\.presentationMode) var presentationMode
-    @State private var player: AVAudioPlayer?
+    @State private var player: AVPlayer?
     @State private var isPlaying = false
     @State private var currentTime: TimeInterval = 0
     @State private var duration: TimeInterval = 0
@@ -42,14 +43,11 @@ struct AudioPlayerView: View {
                         VolumeControlView().scaleEffect(0.5).position(x: 170, y: 50)
                     }
 
-                    //Text("Audio Preview")
-                    //    .font(.title)
-                    //    .padding(
                     Text("\(songTitle)")
                     Text("\(songArtist) - \(albumName)")
-                        .font(.custom("112",size: 11))
+                        .font(.custom("112", size: 11))
                     Text("\(formattedTime(currentTime)) / \(formattedTime(duration))")
-                        .font(.custom("11",size: 10))
+                        .font(.custom("11", size: 10))
 
                     HStack {
                         Spacer()
@@ -90,23 +88,22 @@ struct AudioPlayerView: View {
                 }
                 //.navigationTitle("Audio Preview")
                 //.navigationBarTitleDisplayMode(.inline)
+                .onAppear {
+                    setupRemoteTransportControls()
+                    setupNowPlaying()
+                }
             } else {
                 Text("Unable to load audio")
                     .onAppear {
-                        do {
-                            player = try AVAudioPlayer(contentsOf: audioURL)
-                            duration = player?.duration ?? 0
-                            player?.prepareToPlay()
-                            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-                                if !isEditingSlider {
-                                    currentTime = player?.currentTime ?? 0
-                                }
+                        let playerItem = AVPlayerItem(url: audioURL)
+                        player = AVPlayer(playerItem: playerItem)
+                        duration = CMTimeGetSeconds(playerItem.asset.duration)
+                        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+                            if !isEditingSlider {
+                                currentTime = CMTimeGetSeconds(player?.currentTime() ?? CMTime.zero)
                             }
-                            fetchSongInfo()
-                        } catch {
-                            print("Error loading audio file: \(error)")
                         }
-                        
+                        fetchSongInfo()
                     }
             }
         }
@@ -114,15 +111,10 @@ struct AudioPlayerView: View {
 
     func seek(by seconds: TimeInterval) {
         guard let player = player else { return }
-        let newTime = player.currentTime + seconds
-        if newTime < 0 {
-            player.currentTime = 0
-        } else if newTime > player.duration {
-            player.currentTime = player.duration
-        } else {
-            player.currentTime = newTime
-        }
-        currentTime = player.currentTime
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        let newTime = currentTime + seconds
+        let time = CMTime(seconds: newTime, preferredTimescale: 600)
+        player.seek(to: time)
     }
 
     func getArtwork() -> UIImage? {
@@ -134,32 +126,83 @@ struct AudioPlayerView: View {
         }
         return nil
     }
+    
+    func fetchSongInfo() {
+        let asset = AVAsset(url: audioURL)
+        for metadataItem in asset.commonMetadata {
+            switch metadataItem.commonKey {
+            case .commonKeyTitle:
+                songTitle = metadataItem.stringValue ?? "Unknown Title"
+            case .commonKeyArtist:
+                songArtist = metadataItem.stringValue ?? "Unknown Artist"
+            case .commonKeyAlbumName:
+                albumName = metadataItem.stringValue ?? "Unknown Album"
+            default:
+                break
+            }
+        }
+    }
 
     func formattedTime(_ time: TimeInterval) -> String {
         let minutes = Int(time) / 60
         let seconds = Int(time) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
-    func fetchSongInfo() {
-            let asset = AVAsset(url: audioURL)
-            for metadataItem in asset.commonMetadata {
-                switch metadataItem.commonKey {
-                case .commonKeyTitle:
-                    songTitle = metadataItem.stringValue ?? "Unknown Title"
-                case .commonKeyArtist:
-                    songArtist = metadataItem.stringValue ?? "Unknown Artist"
-                case .commonKeyAlbumName:
-                    albumName = metadataItem.stringValue ?? "Unknown Album"
-                default:
-                    break
-                }
+    
+    func setupRemoteTransportControls() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+
+        commandCenter.playCommand.addTarget { [self] event in
+            if player?.rate == 0.0 {
+                player?.play()
+                isPlaying = true
+                return .success
+            }
+            return .commandFailed
+        }
+
+        commandCenter.pauseCommand.addTarget { [self] event in
+            if player?.rate == 1.0 {
+                player?.pause()
+                isPlaying = false
+                return .success
+            }
+            return .commandFailed
+        }
+
+        commandCenter.skipForwardCommand.addTarget { [self] event in
+            seek(by: 15)
+            return .success
+        }
+
+        commandCenter.skipBackwardCommand.addTarget { [self] event in
+            seek(by: -15)
+            return .success
+        }
+    }
+
+    func setupNowPlaying() {
+        var nowPlayingInfo = [String: Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = songTitle
+        nowPlayingInfo[MPMediaItemPropertyArtist] = songArtist
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = albumName
+
+        if let artwork = getArtwork() {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { size in
+                return artwork
             }
         }
-}
-public struct VolumeControlView: WKInterfaceObjectRepresentable {
-    public init() {
-        
+
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = currentTime
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = duration
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = player?.rate
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
+}
+
+public struct VolumeControlView: WKInterfaceObjectRepresentable {
+    public init() { }
     
     public typealias WKInterfaceObjectType = WKInterfaceVolumeControl
     
@@ -168,11 +211,9 @@ public struct VolumeControlView: WKInterfaceObjectRepresentable {
         return WKInterfaceVolumeControl(origin: .local)
     }
     
-    public func updateWKInterfaceObject(_ map: WKInterfaceVolumeControl, context: WKInterfaceObjectRepresentableContext<VolumeControlView>) {
-        
-    }
+    public func updateWKInterfaceObject(_ map: WKInterfaceVolumeControl, context: WKInterfaceObjectRepresentableContext<VolumeControlView>) { }
 }
 
-#Preview{
+#Preview {
     VolumeControlView()
 }

@@ -14,6 +14,7 @@ struct VideoPlayerView: View {
     var body: some View {
         VideoPlayer(player: AVPlayer(url: videoURL)){
         }
+            .ignoresSafeArea()
             .frame(minHeight: 255)
             //.navigationTitle("Video Preview")
             //.navigationBarBackButtonHidden(true)
