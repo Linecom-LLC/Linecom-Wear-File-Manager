@@ -12,8 +12,10 @@ struct FilePreviewSheet: View {
 
     var body: some View {
         ScrollView {
-            Text(fileContent)
-                .padding()
+            LazyVStack{
+                Text(fileContent)
+                    .padding()
+            }
         }
         .navigationTitle("文本预览")
     }
