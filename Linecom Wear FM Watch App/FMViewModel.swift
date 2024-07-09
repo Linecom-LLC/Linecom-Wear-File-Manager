@@ -118,4 +118,15 @@ class FileManagerViewModel: ObservableObject {
                 }
             }
     }
+    
+    func getLrcContent(for audioFileURL: URL) -> String? {
+        let lrcFileName = audioFileURL.deletingPathExtension().appendingPathExtension("lrc")
+        let lrcFilePath = documentsDirectory.appendingPathComponent(lrcFileName.lastPathComponent)
+        do {
+            return try String(contentsOf: lrcFilePath, encoding: .utf8)
+        } catch {
+            print("Error reading lrc file content: \(error)")
+            return nil
+        }
+    }
 }
