@@ -117,16 +117,10 @@
         }
       }
     },
-    "New file name" : {
-      "shouldTranslate" : false
-    },
     "Player" : {
 
     },
     "Rename" : {
-      "shouldTranslate" : false
-    },
-    "Rename File" : {
       "shouldTranslate" : false
     },
     "Unable to load audio" : {
@@ -235,6 +229,9 @@
         }
       }
     },
+    "新文件名称" : {
+
+    },
     "无可用歌词" : {
 
     },
@@ -270,6 +267,9 @@
           }
         }
       }
+    },
+    "重命名文件" : {
+
     },
     "键入 URL" : {
       "localizations" : {

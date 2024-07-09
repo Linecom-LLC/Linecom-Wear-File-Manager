@@ -14,9 +14,9 @@ struct RenameFileSheet: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Rename File")
+            Text("重命名文件")
                 .font(.headline)
-            TextField("New file name", text: $newFileName)
+            TextField("新文件名称", text: $newFileName)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
             HStack {
