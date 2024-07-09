@@ -7,7 +7,6 @@
 
 import SwiftUI
 import AVKit
-import AVFoundation
 import MediaPlayer
 
 struct AudioPlayerView: View {
@@ -18,96 +17,140 @@ struct AudioPlayerView: View {
     @State private var currentTime: TimeInterval = 0
     @State private var duration: TimeInterval = 0
     @State private var timer: Timer?
-    @State private var isEditingSlider = false
-    @State private var songTitle: String = "Unknown Title"
-    @State private var songArtist: String = "Unknown Artist"
-    @State private var albumName: String = "Unknown Album"
+    //@State private var scrollTimer: Timer?
+    @State private var lrcContent: String = ""
+    @State private var lrcLines: [LRCLine] = []
+    @State private var currentLrcLineIndex: Int = 0
+
+    @State private var songTitle: String = "未知标题"
+    @State private var songArtist: String = "未知艺术家"
+    @State private var albumName: String = "未知专辑"
 
     var body: some View {
-        VStack {
-            if let player = player {
-                VStack {
-                    ZStack {
-                        if let artwork = getArtwork() {
-                            Image(uiImage: artwork)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
-                                .padding()
-                        } else {
-                            Rectangle()
-                                .fill(Color.gray)
-                                .frame(width: 100, height: 100)
-                                .padding()
-                        }
-                        VolumeControlView().scaleEffect(0.5).position(x: 170, y: 50)
-                    }
-
-                    Text("\(songTitle)")
-                    Text("\(songArtist) - \(albumName)")
-                        .font(.custom("112", size: 11))
-                    Text("\(formattedTime(currentTime)) / \(formattedTime(duration))")
-                        .font(.custom("11", size: 10))
-
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            seek(by: -5)
-                        }) {
-                            Image(systemName: "gobackward.5")
-                        }
-                        .frame(width: 40, height: 40)
-                        //.background(Color.gray.opacity(0.2))
-                        .clipShape(Circle())
-                        
-                        
-                        Spacer()
-                        Button(action: {
-                            if isPlaying {
-                                player.pause()
+        TabView {
+            VStack {
+                if let player = player {
+                    VStack {
+                        ZStack {
+                            if let artwork = getArtwork() {
+                                Image(uiImage: artwork)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 100, height: 100)
+                                    .padding()
                             } else {
-                                player.play()
+                                Rectangle()
+                                    .fill(Color.gray)
+                                    .frame(width: 100, height: 100)
+                                    .padding()
                             }
-                            isPlaying.toggle()
-                        }) {
-                            Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                            VolumeControlView().scaleEffect(0.5).position(x: 170, y: 50)
                         }
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                        Spacer()
-                        Button(action: {
-                            seek(by: 5)
-                        }) {
-                            Image(systemName: "goforward.5")
+
+                        Text("\(songTitle)")
+                        Text("\(songArtist) - \(albumName)")
+                            .font(.custom("112", size: 11))
+                        Text("\(formattedTime(currentTime)) / \(formattedTime(duration))")
+                            .font(.custom("11", size: 10))
+
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                seek(by: -5)
+                            }) {
+                                Image(systemName: "gobackward.5")
+                            }
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                            Spacer()
+                            Button(action: {
+                                if isPlaying {
+                                    player.pause()
+                                } else {
+                                    player.play()
+                                }
+                                isPlaying.toggle()
+                            }) {
+                                Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                            }
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                            Spacer()
+                            Button(action: {
+                                seek(by: 5)
+                            }) {
+                                Image(systemName: "goforward.5")
+                            }
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                            Spacer()
                         }
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                        Spacer()
                     }
-                    .padding()
-                }
-                //.navigationTitle("Audio Preview")
-                //.navigationBarTitleDisplayMode(.inline)
-                .onAppear {
-                    setupRemoteTransportControls()
-                    setupNowPlaying()
-                }
-                .onDisappear(){
-                    player.pause()
-                }
-            } else {
-                Text("Unable to load audio")
+                    //.navigationTitle("Audio Preview")
+                    //.navigationBarTitleDisplayMode(.inline)
                     .onAppear {
-                        let playerItem = AVPlayerItem(url: audioURL)
-                        player = AVPlayer(playerItem: playerItem)
-                        duration = CMTimeGetSeconds(playerItem.asset.duration)
-                        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-                            if !isEditingSlider {
+                        setupRemoteTransportControls()
+                        setupNowPlaying()
+                        loadLRCContent()
+                        do {
+                                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                                try AVAudioSession.sharedInstance().setActive(true)
+                            } catch {
+                                print(error)
+                            }
+                    }
+                } else {
+                    Text("Unable to load audio")
+                        .onAppear {
+                            let playerItem = AVPlayerItem(url: audioURL)
+                            player = AVPlayer(playerItem: playerItem)
+                            duration = CMTimeGetSeconds(playerItem.asset.duration)
+                            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
                                 currentTime = CMTimeGetSeconds(player?.currentTime() ?? CMTime.zero)
+                                updateCurrentLRCLine()
+                            }
+                            fetchSongInfo()
+                        }
+                }
+            }
+            .tabItem {
+                Label("Player", systemImage: "music.note")
+            }
+
+            VStack {
+                if lrcLines.isEmpty {
+                    Text("无可用歌词")
+                        .padding()
+                } else {
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            VStack {
+                                ForEach(Array(lrcLines.enumerated()), id: \.offset) { index, line in
+                                    Text(line.text)
+                                        .foregroundColor(index == currentLrcLineIndex ? .blue : .white)
+                                        .id(index)
+                                        .onTapGesture {
+                                            seekToTime(time: line.time)
+                                    }
+                                }
                             }
                         }
-                        fetchSongInfo()
+                        .onChange(of: currentLrcLineIndex) { index in
+                            withAnimation {
+                                proxy.scrollTo(index, anchor: .center)
+                            }
+                            //scrollTimer?.invalidate()
+                            //scrollTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+                            //    if currentLrcLineIndex < lrcLines.count {
+                            //        seekToTime(time: lrcLines[currentLrcLineIndex].time)
+                            //    }
+                            //}
+                        }
                     }
+                }
+            }
+            .tabItem {
+                Label("歌词", systemImage: "text.quote")
             }
         }
     }
@@ -135,16 +178,23 @@ struct AudioPlayerView: View {
         for metadataItem in asset.commonMetadata {
             switch metadataItem.commonKey {
             case .commonKeyTitle:
-                songTitle = metadataItem.stringValue ?? "Unknown Title"
+                songTitle = metadataItem.stringValue ?? "未知标题"
             case .commonKeyArtist:
-                songArtist = metadataItem.stringValue ?? "Unknown Artist"
+                songArtist = metadataItem.stringValue ?? "未知艺术家"
             case .commonKeyAlbumName:
-                albumName = metadataItem.stringValue ?? "Unknown Album"
+                albumName = metadataItem.stringValue ?? "未知专辑"
             default:
                 break
             }
         }
     }
+    
+    func seekToTime(time: TimeInterval) {
+            guard let player = player else { return }
+            let cmTime = CMTime(seconds: time, preferredTimescale: 600)
+            player.seek(to: cmTime)
+            currentTime = time
+        }
 
     func formattedTime(_ time: TimeInterval) -> String {
         let minutes = Int(time) / 60
@@ -202,10 +252,28 @@ struct AudioPlayerView: View {
 
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
+
+    func loadLRCContent() {
+        if let lrcContent = FileManagerViewModel().getLrcContent(for: audioURL) {
+            self.lrcContent = lrcContent
+            self.lrcLines = LRCParser.parse(lrcContent)
+        }
+    }
+
+    func updateCurrentLRCLine() {
+        for (index, line) in lrcLines.enumerated() {
+            if currentTime < line.time {
+                currentLrcLineIndex = max(0, index - 1)
+                break
+            }
+        }
+    }
 }
 
 public struct VolumeControlView: WKInterfaceObjectRepresentable {
-    public init() { }
+    public init() {
+        
+    }
     
     public typealias WKInterfaceObjectType = WKInterfaceVolumeControl
     
@@ -214,9 +282,7 @@ public struct VolumeControlView: WKInterfaceObjectRepresentable {
         return WKInterfaceVolumeControl(origin: .local)
     }
     
-    public func updateWKInterfaceObject(_ map: WKInterfaceVolumeControl, context: WKInterfaceObjectRepresentableContext<VolumeControlView>) { }
-}
-
-#Preview {
-    VolumeControlView()
+    public func updateWKInterfaceObject(_ map: WKInterfaceVolumeControl, context: WKInterfaceObjectRepresentableContext<VolumeControlView>) {
+        
+    }
 }
