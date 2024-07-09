@@ -120,6 +120,9 @@
     "New file name" : {
       "shouldTranslate" : false
     },
+    "Player" : {
+
+    },
     "Rename" : {
       "shouldTranslate" : false
     },
@@ -231,6 +234,12 @@
           }
         }
       }
+    },
+    "无可用歌词" : {
+
+    },
+    "歌词" : {
+
     },
     "澪空软件" : {
       "localizations" : {

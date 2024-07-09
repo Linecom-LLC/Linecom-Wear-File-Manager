@@ -15,6 +15,7 @@
 		03A9423D2C3C68A0008C7966 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 03A9423C2C3C68A0008C7966 /* Alamofire */; };
 		03A9423F2C3C72FE008C7966 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9423E2C3C72FE008C7966 /* AboutView.swift */; };
 		03A942412C3C9387008C7966 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 03A942402C3C9387008C7966 /* Localizable.xcstrings */; };
+		03A942432C3D1F12008C7966 /* LRCParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A942422C3D1F12008C7966 /* LRCParser.swift */; };
 		03AB88BA2C3B0E6000EB5BE4 /* FMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB88B92C3B0E6000EB5BE4 /* FMViewModel.swift */; };
 		03AB88BC2C3B0F9200EB5BE4 /* DownloadFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB88BB2C3B0F9200EB5BE4 /* DownloadFileView.swift */; };
 		03AB88BE2C3B1D4C00EB5BE4 /* RenameFileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB88BD2C3B1D4C00EB5BE4 /* RenameFileSheet.swift */; };
@@ -61,6 +62,7 @@
 		032A09D42B8B74BA00FEEB29 /* Linecom-Wear-Music-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Linecom-Wear-Music-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		03A9423E2C3C72FE008C7966 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		03A942402C3C9387008C7966 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		03A942422C3D1F12008C7966 /* LRCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRCParser.swift; sourceTree = "<group>"; };
 		03AB88B92C3B0E6000EB5BE4 /* FMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMViewModel.swift; sourceTree = "<group>"; };
 		03AB88BB2C3B0F9200EB5BE4 /* DownloadFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileView.swift; sourceTree = "<group>"; };
 		03AB88BD2C3B1D4C00EB5BE4 /* RenameFileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameFileSheet.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				03AB88BF2C3B227900EB5BE4 /* FilePreview.swift */,
 				03AB88BB2C3B0F9200EB5BE4 /* DownloadFileView.swift */,
 				03AB88B92C3B0E6000EB5BE4 /* FMViewModel.swift */,
+				03A942422C3D1F12008C7966 /* LRCParser.swift */,
 				03AB88BD2C3B1D4C00EB5BE4 /* RenameFileSheet.swift */,
 				032A09A22B8B699300FEEB29 /* Assets.xcassets */,
 				032A09A42B8B699300FEEB29 /* Preview Content */,
@@ -267,6 +270,7 @@
 				03AB88C22C3B23D600EB5BE4 /* VedioPreview.swift in Sources */,
 				03A9423F2C3C72FE008C7966 /* AboutView.swift in Sources */,
 				03AB88C02C3B227900EB5BE4 /* FilePreview.swift in Sources */,
+				03A942432C3D1F12008C7966 /* LRCParser.swift in Sources */,
 				03AB88C62C3C12AA00EB5BE4 /* AudioPlayerView.swift in Sources */,
 				03AB88BE2C3B1D4C00EB5BE4 /* RenameFileSheet.swift in Sources */,
 				03AB88BA2C3B0E6000EB5BE4 /* FMViewModel.swift in Sources */,
