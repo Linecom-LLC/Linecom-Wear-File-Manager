@@ -28,15 +28,24 @@ struct ContentView: View {
                         HStack {
                             if viewModel.isVideoFile(at: index) {
                                 NavigationLink(destination: VideoPlayerView(videoURL: viewModel.getFileURL(at: index)!)) {
-                                    Text(file)
+                                    HStack {
+                                        Image(systemName: "movieclapper")
+                                        Text(file)
+                                    }
                                 }
                             } else if viewModel.isImageFile(at: index) {
                                 NavigationLink(destination: ImageView(imageURL: viewModel.getFileURL(at: index)!)) {
-                                    Text(file)
+                                    HStack {
+                                        Image(systemName: "photo")
+                                        Text(file)
+                                    }
                                 }
                             } else if viewModel.isAudioFile(at: index) {
                                 NavigationLink(destination: AudioPlayerView(audioURL: viewModel.getFileURL(at: index)!)) {
-                                    Text(file)
+                                    HStack {
+                                        Image(systemName: "music.note")
+                                        Text(file)
+                                    }
                                 }
                             } else {
                                 Text(file)

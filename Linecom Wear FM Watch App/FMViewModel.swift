@@ -69,6 +69,11 @@ class FileManagerViewModel: ObservableObject {
         let fileName = files[index]
         return documentsDirectory.appendingPathComponent(fileName)
     }
+    func isTextFile(at index: Int) -> Bool {
+        let fileName = files[index]
+        let textExtenions = ["txt", "lrc", "htm", "html", "xml"]
+        return textExtenions.contains { fileName.lowercased().hasSuffix($0) }
+    }
 
     func isVideoFile(at index: Int) -> Bool {
         let fileName = files[index]
