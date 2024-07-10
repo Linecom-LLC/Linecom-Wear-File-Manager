@@ -22,7 +22,7 @@ jobs:
           xcode-version: latest
 
       - name: Resolve Swift Package Manager dependencies
-        run: xcodebuild -resolvePackageDependencies -workspace YourProject.xcworkspace
+        run: xcodebuild -resolvePackageDependencies -workspace project.xcworkspace -scheme 'Linecom Wear FM Watch App'
 
       - name: Build app
         run: xcodebuild clean build -workspace project.xcworkspace -scheme 'Linecom Wear FM Watch App' -destination 'platform=watchOS Simulator,name=Apple Watch Series 8 - 45mm,OS=latest'
