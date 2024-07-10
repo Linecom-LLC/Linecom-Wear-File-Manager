@@ -10,7 +10,7 @@ import AuthenticationServices
 
 struct AboutView: View{
     //@AppStorage("debugselect") var debug=false
-    //@State var ICPPersent=false
+    @State var ICPPersent=false
     //@State var LicensePersent=false
     //@State var debugmodepst=false
     var body: some View{
@@ -31,6 +31,33 @@ struct AboutView: View{
                     session.prefersEphemeralWebBrowserSession = true
                     session.start()
                 }
+            Spacer()
+            Text("浙ICP备2024071295号-6A").font(.custom("", size: 13)).sheet(isPresented: $ICPPersent, content: {ICPView()}).onTapGesture {
+                ICPPersent=true
+            }
+        }
+    }
+}
+
+struct ICPView: View{
+    var body: some View{
+        NavigationStack{
+            List{
+                    Text("浙ICP备2024071295号-6A").font(.custom("cstom", size: 14))
+                Button(action: {
+                    let session = ASWebAuthenticationSession(url: URL(string: "https://beian.miit.gov.cn")!, callbackURLScheme: "mlhd") { _, _ in
+                        return
+                    }
+                    session.prefersEphemeralWebBrowserSession = true
+                    session.start()
+                }, label: {
+                    HStack{
+                        Image(systemName: "arrow.up.forward")
+                        Text("MIIT网站")
+                    }
+                })
+            }
+            .navigationTitle("ICP备案")
         }
     }
 }

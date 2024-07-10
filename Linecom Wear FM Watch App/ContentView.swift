@@ -104,7 +104,7 @@ struct ContentView: View {
                     )
                 }
             }
-            .navigationTitle("LWFM文件管理")
+            .navigationTitle("文件")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                                 Button(action: {

@@ -107,7 +107,11 @@
     "Developed by Linecom" : {
       "shouldTranslate" : false
     },
+    "ICP备案" : {
+
+    },
     "LWFM文件管理" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -116,6 +120,9 @@
           }
         }
       }
+    },
+    "MIIT网站" : {
+
     },
     "Player" : {
       "shouldTranslate" : false
@@ -219,6 +226,9 @@
         }
       }
     },
+    "文件" : {
+
+    },
     "文本预览" : {
       "localizations" : {
         "en" : {
@@ -258,6 +268,9 @@
           }
         }
       }
+    },
+    "浙ICP备2024071295号-6A" : {
+
     },
     "澪空软件" : {
       "localizations" : {
