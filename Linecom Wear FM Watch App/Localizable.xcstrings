@@ -118,7 +118,7 @@
       }
     },
     "Player" : {
-
+      "shouldTranslate" : false
     },
     "Rename" : {
       "shouldTranslate" : false
@@ -230,13 +230,34 @@
       }
     },
     "新文件名称" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New File Name"
+          }
+        }
+      }
     },
     "无可用歌词" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No available Lyrics"
+          }
+        }
+      }
     },
     "歌词" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lyric"
+          }
+        }
+      }
     },
     "澪空软件" : {
       "localizations" : {
@@ -269,7 +290,14 @@
       }
     },
     "重命名文件" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rename File"
+          }
+        }
+      }
     },
     "键入 URL" : {
       "localizations" : {

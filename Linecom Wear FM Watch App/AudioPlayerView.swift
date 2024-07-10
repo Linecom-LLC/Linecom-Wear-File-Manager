@@ -153,6 +153,9 @@ struct AudioPlayerView: View {
                 Label("歌词", systemImage: "text.quote")
             }
         }
+        .onDisappear(){
+            player?.pause()
+        }
     }
 
     func seek(by seconds: TimeInterval) {

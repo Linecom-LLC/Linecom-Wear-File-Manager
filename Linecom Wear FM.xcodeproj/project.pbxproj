@@ -60,6 +60,7 @@
 		032A09B92B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linecom_Wear_Music_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		032A09BB2B8B699300FEEB29 /* Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linecom_Wear_Music_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		032A09D42B8B74BA00FEEB29 /* Linecom-Wear-Music-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Linecom-Wear-Music-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		039022782C3DAAA3004C8B1A /* Linecom Wear FM Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Linecom Wear FM Watch App.entitlements"; sourceTree = "<group>"; };
 		03A9423E2C3C72FE008C7966 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		03A942402C3C9387008C7966 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		03A942422C3D1F12008C7966 /* LRCParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRCParser.swift; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		032A099D2B8B699200FEEB29 /* Linecom Wear FM Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				039022782C3DAAA3004C8B1A /* Linecom Wear FM Watch App.entitlements */,
 				032A09D42B8B74BA00FEEB29 /* Linecom-Wear-Music-Watch-App-Info.plist */,
 				032A099E2B8B699200FEEB29 /* Linecom_Wear_FMApp.swift */,
 				03AB88C52C3C12AA00EB5BE4 /* AudioPlayerView.swift */,
@@ -412,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Linecom Wear FM Watch App/Linecom Wear FM Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Linecom Wear FM Watch App/Preview Content\"";
@@ -443,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Linecom Wear FM Watch App/Linecom Wear FM Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Linecom Wear FM Watch App/Preview Content\"";
