@@ -126,11 +126,21 @@ struct AudioPlayerView: View {
                         ScrollView {
                             VStack {
                                 ForEach(Array(lrcLines.enumerated()), id: \.offset) { index, line in
+                                    if index == currentLrcLineIndex {
                                     Text(line.text)
-                                        .foregroundColor(index == currentLrcLineIndex ? .blue : .white)
+                                        .foregroundColor(.blue)
                                         .id(index)
+                                        .font(.custom("LRCTextOn", size: 20))
                                         .onTapGesture {
                                             seekToTime(time: line.time)
+                                        }
+                                    } else {
+                                        Text(line.text)
+                                            .foregroundColor(.white)
+                                            .id(index)
+                                            .onTapGesture {
+                                                seekToTime(time: line.time)
+                                            }
                                     }
                                 }
                             }

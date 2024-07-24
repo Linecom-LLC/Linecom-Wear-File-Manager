@@ -48,13 +48,16 @@ struct ContentView: View {
                                     }
                                 }
                             } else {
-                                Text(file)
-                                    .onTapGesture {
-                                        if let content = viewModel.readFileContent(at: index) {
-                                            fileContent = content
-                                            isFilePreviewSheetPresented = true
+                                HStack {
+                                    Image(systemName: "doc")
+                                    Text(file)
+                                        .onTapGesture {
+                                            if let content = viewModel.readFileContent(at: index) {
+                                                fileContent = content
+                                                isFilePreviewSheetPresented = true
+                                            }
                                         }
-                                    }
+                                }
                             }
                             Spacer()
                         }
