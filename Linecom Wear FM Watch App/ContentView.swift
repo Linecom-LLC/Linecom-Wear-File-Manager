@@ -94,7 +94,7 @@ struct ContentView: View {
                     FilePreviewSheet(fileContent: $fileContent)
                 }
                 .sheet(isPresented: $isDownloadFileSheetPresented) {
-                                    DownloadFileView()
+                    MixedImportView()
                                         .environmentObject(viewModel)
                                 }
                 .sheet(isPresented: $isAboutSheetPresented) {

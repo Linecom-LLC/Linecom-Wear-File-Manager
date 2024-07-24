@@ -94,8 +94,9 @@ class FileManagerViewModel: ObservableObject {
     }
 
     func downloadFile(from url: URL, completion: @escaping (Error?) -> Void) {
-        let destination: DownloadRequest.Destination = { _, _ in
-            let fileURL = self.documentsDirectory.appendingPathComponent(url.lastPathComponent)
+        let destination: DownloadRequest.Destination = { _, response in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent(response.suggestedFilename ?? "UnknownFilename")
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
 

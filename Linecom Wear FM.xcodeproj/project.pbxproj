@@ -23,6 +23,8 @@
 		03AB88C22C3B23D600EB5BE4 /* VedioPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB88C12C3B23D600EB5BE4 /* VedioPreview.swift */; };
 		03AB88C42C3C0CD000EB5BE4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB88C32C3C0CD000EB5BE4 /* ImageView.swift */; };
 		03AB88C62C3C12AA00EB5BE4 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB88C52C3C12AA00EB5BE4 /* AudioPlayerView.swift */; };
+		03AF84712C50902F0030E7BF /* CloudCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF84702C50902F0030E7BF /* CloudCodeView.swift */; };
+		03AF84732C5090EA0030E7BF /* MixedImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF84722C5090EA0030E7BF /* MixedImportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		03AB88C12C3B23D600EB5BE4 /* VedioPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPreview.swift; sourceTree = "<group>"; };
 		03AB88C32C3C0CD000EB5BE4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		03AB88C52C3C12AA00EB5BE4 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		03AF84702C50902F0030E7BF /* CloudCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCodeView.swift; sourceTree = "<group>"; };
+		03AF84722C5090EA0030E7BF /* MixedImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedImportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				03AB88C12C3B23D600EB5BE4 /* VedioPreview.swift */,
 				03AB88BF2C3B227900EB5BE4 /* FilePreview.swift */,
 				03AB88BB2C3B0F9200EB5BE4 /* DownloadFileView.swift */,
+				03AF84722C5090EA0030E7BF /* MixedImportView.swift */,
+				03AF84702C50902F0030E7BF /* CloudCodeView.swift */,
 				03AB88B92C3B0E6000EB5BE4 /* FMViewModel.swift */,
 				03A942422C3D1F12008C7966 /* LRCParser.swift */,
 				03AB88BD2C3B1D4C00EB5BE4 /* RenameFileSheet.swift */,
@@ -269,6 +275,7 @@
 				03AB88C42C3C0CD000EB5BE4 /* ImageView.swift in Sources */,
 				03AB88BC2C3B0F9200EB5BE4 /* DownloadFileView.swift in Sources */,
 				032A09A12B8B699200FEEB29 /* ContentView.swift in Sources */,
+				03AF84732C5090EA0030E7BF /* MixedImportView.swift in Sources */,
 				03AB88C22C3B23D600EB5BE4 /* VedioPreview.swift in Sources */,
 				03A9423F2C3C72FE008C7966 /* AboutView.swift in Sources */,
 				03AB88C02C3B227900EB5BE4 /* FilePreview.swift in Sources */,
@@ -277,6 +284,7 @@
 				03AB88BE2C3B1D4C00EB5BE4 /* RenameFileSheet.swift in Sources */,
 				03AB88BA2C3B0E6000EB5BE4 /* FMViewModel.swift in Sources */,
 				032A099F2B8B699200FEEB29 /* Linecom_Wear_FMApp.swift in Sources */,
+				03AF84712C50902F0030E7BF /* CloudCodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
