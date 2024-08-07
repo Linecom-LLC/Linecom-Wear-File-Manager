@@ -11,19 +11,21 @@ import AuthenticationServices
 struct AboutView: View{
     //@AppStorage("debugselect") var debug=false
     @State var ICPPersent=false
+    @State var isQQPresent=false
     //@State var LicensePersent=false
     //@State var debugmodepst=false
     var body: some View{
-        VStack{
-            HStack{
-                Image("abouticon").resizable().scaledToFit().mask{Circle()}
-                
-                VStack{
-                    Text("澪空软件")
-                    Text("腕上文件")
+        TabView {
+            VStack{
+                HStack{
+                    Image("abouticon").resizable().scaledToFit().mask{Circle()}
+                    
+                    VStack{
+                        Text("澪空软件")
+                        Text("腕上文件")
                         Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)
-                }.padding()
-            }
+                    }.padding()
+                }
                 Text("Developed by Linecom").padding().onTapGesture {
                     let session = ASWebAuthenticationSession(url: URL(string: "https://www.linecom.net.cn")!, callbackURLScheme: "mlhd") { _, _ in
                         return
@@ -31,9 +33,27 @@ struct AboutView: View{
                     session.prefersEphemeralWebBrowserSession = true
                     session.start()
                 }
-            Spacer()
-            Text("浙ICP备2024071295号-6A").font(.custom("", size: 13)).sheet(isPresented: $ICPPersent, content: {ICPView()}).onTapGesture {
-                ICPPersent=true
+                Spacer()
+                Text("浙ICP备2024071295号-6A").font(.custom("", size: 13)).sheet(isPresented: $ICPPersent, content: {ICPView()}).onTapGesture {
+                    ICPPersent=true
+                }
+            }
+            
+            Section {
+                Button(action: {
+                    isQQPresent = true
+                }, label: {
+                    Text("加入我们的QQ群组")
+                })
+                .sheet(isPresented: $isQQPresent, content: {
+                    VStack {
+                        Text("779379141")
+                        Image("QQQR")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .navigationTitle("Linecom Community")
+                })
             }
         }
     }
